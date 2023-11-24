@@ -1,96 +1,156 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
+
 <head>
-<title>Thirumangalam</title>
-<meta charset="utf-8" />
-<meta content="width=device-width, initial-scale=1.0" name="viewport" />
-<meta name="description" content="Church - HTML Template" />
-<meta name="keywords" content="Church HTML Template, church, html template, html theme, church theme,bible, charity, christ, christian, church, churches, events, mosque, non profit, religion, religious, sermon">
-<meta name="author" content="wp-organic" />
-<meta name="MobileOptimized" content="320" />
-<!-- favicon-icon -->
-<link rel="icon" type="image/icon" href="{{asset('frontend/images/')}}"> 
-<!-- theme style -->
-<!-- bootstrap css -->
-<link href="{{asset('frontend/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/> 
-<!-- fontawesome css -->
-<link href="{{asset('frontend/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css"/> 
-<!-- flat icons css -->
-<link href="{{asset('frontend/css/flaticon.css')}}" rel="stylesheet" type="text/css"/> 
-<!-- google font -->
-<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,900|Source+Sans+Pro:300,400,600,700" rel="stylesheet">
-<!-- menu css -->
-<link href="{{asset('frontend/css/menumaker.css')}}" rel="stylesheet" type="text/css"/> 
-<!-- owl carousel css -->
-<link href="{{asset('frontend/css/owl.carousel.css')}}" rel="stylesheet" type="text/css"/> 
-<!-- magnify popup css -->
-<link href="{{asset('frontend/css/magnific-popup.css')}}" rel="stylesheet" type="text/css"/> 
-<!-- datepicker css -->
-<link href="{{asset('frontend/css/datepicker.css')}}" rel="stylesheet" type="text/css"/> 
-<!-- custom css -->
-<link href="{{asset('frontend/css/style.css')}}" rel="stylesheet" type="text/css"/> 
-<!-- end theme style -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peace</title>
+    <link rel="shortcut icon" href="assets/css/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="{{asset('frontend/css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/swiper.min.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/lightcase.css')}}">
+
+    <!-- main css for template -->
+    <link rel="stylesheet" href="{{asset('frontend/css/style.min.css')}}">
 </head>
-<!-- end head -->
-<!--body start-->
+
 <body>
-<!-- preloader --> 
-  <div class="preloader">
-    <div class="status">
-      <div class="status-message">
-      </div>
-    </div>
-  </div>
-<!-- end preloader --> 
-<!--  navigation -->
-  <div class="nav-bar navbar-fixed-top">
-    <div class="container">
-      <div class="row" style="width: 100%">
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <div class="logo">
-            {{-- <a href="index.html"><img src="{{asset('frontend/images/logo.png')}}" alt="logo"></a> --}}
-          </div>
-        </div>
-        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12" style="margin-bottom: 30px;">
-          <div class="navigation-menu">
-            <div id="cssmenu">
-              <ul>
-                <li><a href="/">Home</a></li>                                  
-                <li><a href="#">Temple</a></li>
-                <li><a href="#">Offerings</a></li>
-                <li><a href="#">Pooja time</a></li>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">News & Events</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Administration</a></li>
-                <li><a href="#">Festivals</a></li>
 
-
-              </ul>
+    <!-- ================> preloader start here <================ -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
             </div>
-          </div>
-        </div>        
-      </div>
+        </div>
     </div>
-  </div> 
-<!--  end navigation -->
-<!-- search -->
-  <div class="search">
-    <div class="container clearfix">
-      <input type="search" class="search-box" placeholder="Type anything here...."/>
-      <a href="#" class="fa fa-times search-close"></a>
+    <!-- ================> preloader ending here <================ -->
+
+    <!-- ================> Header Search <================ -->
+    <div class="header-form">
+        <div class="bg-lay">
+            <div class="cross">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <form class="form-container">
+            <input type="text" placeholder="Input Your Search" name="name">
+            <button type="submit">Search</button>
+        </form>
     </div>
-  </div>
-<!--end search -->
+    <!-- ================> Header Search <================ -->
 
 
+    <!-- ================> header section start here <================== -->
+    <header class="header">
+        <div class="navbar-expand-xl">
+            <div class="collapse navbar-collapse" id="menubar2">
+                <div class="header__top w-100">
+                    <div class="container">
+                        <div class="header__top-area">
+                            <div class="header__top-left">
+                                <ul>
+                                    <li>
+                                        <i class="fas fa-phone-alt"></i>
+                                        +8812 345 678 912
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-envelope"></i>
+                                        info@yourmail.com
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="header__top-center">
+                                <div class="header__top-logo d-none d-md-block" >
+                                    <a href="/"><img style="width:160px; height:160px;" src="{{asset('frontend/images/temple final Logo English.png')}}" alt="logo"></a>
+                                </div>
+                            </div>
+                            <div class="header__top-right">
+                                <div class="header__top-socialsearch">
+                                    <div class="header__top-social">
+                                        <ul>
+                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                                        </ul>
+                                    </div>
+                              
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header__bottom" >
+            <div class="container " >
+                <div class="header__mainmenu navbar navbar-expand-xl navbar-light" >
+                    <div class="header__logo" >
+                        <a href="index.html" style="width: 100px; height:100px;" class="d-none d-xl-block"><img src="{{asset('frontend/images/temple final Logo English.png')}}" alt="logo"></a>
+                        <a href="index.html" class="d-xl-none"><img src="{{asset('frontend/images/logo/01.png')}}" alt="logo"></a>
+                    </div>
+                    <div class="header__bar">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menubar" aria-controls="menubar" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <button class="navbar-toggler header__bar-info" type="button" data-bs-toggle="collapse" data-bs-target="#menubar2" aria-controls="menubar2" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="fas fa-info"></span>
+                        </button>
+                    </div>
+                    <div class="header__menu navbar-expand-xl">
+                        <div class="collapse navbar-collapse" id="menubar">
+                            <ul>
+                                <li class="active">
+                                    <a href="/">Home</a>
+                                </li>
+                                <li class="active">
+                                    <a href="/temple">Temple</a>
+                                </li >
+                                <li class="active">
+                                    <a href="/offerings">Offerings</a>
+                                </li>
+                                <li class="active">
+                                  <a href="/poojas">Poojas</a>
+                              </li>
+                                <li class="active">
+                                    <a href="/gallery">Gallery</a>
+                                </li>
+                                <li class="active">
+                                    <a href="/events-news">news & events</a>
+                                </li >
+                                <li class="active">
+                                    <a href="#0">Contact </a>
+                                </li >
+                                <li class="active">
+                                    <a href="#0">Administration</a>
+                                </li>
+                                <li class="active"><a href="contact.html"> Festivals</a></li>
+                            </ul>
+                            <a href="cause-single.html" class="default-btn"><span>Donate Now <i class="fas fa-heart"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ================> header section end here <================== -->
+    <div class="donaterange__content "style="display: none" >
+    
+        <div class="donaterange__bars" >
+            <div class="donaterange__bar"></div>
+        </div>
+       
+    </div>
 
-
-
-
-
-
+    
 
 
 @yield('body')
@@ -100,174 +160,184 @@
 
 
 
-
-
-
-
-
-
-
-
-
-<!-- footer -->
-  <footer id="footer" class="footer-main-block">
-    <div class="bg-img" style="background-image: url('{{asset('frontend/images/footer-bg.jpg')}}')">
-      <div class="overlay-bg"></div>
-      <div class="container">
-        <div class="row footer-block">
-          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div class="footer-logo">
-              {{-- <a href="index.html"><img src="{{asset('frontend/images/footer-logo.png')}}" class="img-responsive" alt="footer-logo"></a> --}}
+    <!-- ================> Social section start here <================== -->
+    <div class="social">
+        <div class="container">
+            <div class="social__area">
+                <ul class="social__list">
+                    <li class="social__list-facebook">
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>facebook</span>
+                        </a>
+                    </li>
+                    <li class="social__list-twitter">
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                            <span>twitter</span>
+                        </a>
+                    </li>
+                    <li class="social__list-linkedin">
+                        <a href="#">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>linkedin</span>
+                        </a>
+                    </li>
+                    <li class="social__list-instagram">
+                        <a href="#">
+                            <i class="fab fa-instagram"></i>
+                            <span>instagram</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <div class="row footer-content">
-              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><p>Santa Cruz Office:</p></div>
-              <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9"><p>Wporganic Themes<br>Block 145 Antela Road<br>Bredsbin Austrlia </p></div>
-              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><p>Phone:</p></div>
-              <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9"><p class="contact-no"><a href="tel:012123456789">012 123 456 789</a><br><a href="tel:012123456789">012 123 456 789</a></p></div>
-              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><p>Email:</p></div>
-              <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                <p class="mail-to"><a href="mailto:wporganic@example.com?Subject=Hello%20again" target="_top">wporganic@example.com</a><br>
-                <a href="mailto:wporganic@example.com?Subject=Hello%20again" target="_top">wporganic@example.com</a></p>
-              </div>
-            </div>
-          </div> 
-          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">  
-            
-                    
-          </div>
-          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div class="footer-section">
-              <h6 class="footer-heading">Our Causes</h6>
-            </div>
-            <div class="accor-widget footer-cause-block">
-              <div class="panel-group cause-panel" id="accordion" role="tablist" aria-multiselectable="true">
-                <div class="panel panel-default">
-                  <div class="panel-heading" role="tab" id="headingOne">
-                    <p class="panel-title question-heading">
-                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        <span class="btn btn-default cause-btn cause-btn-minus"><i class="fa fa-minus"></i></span>
-                        <span class="btn btn-default cause-btn cause-btn-plus"><i class="fa fa-plus"></i></span>
-                        Do you have an installation service?
-                      </a>
-                    </p>
-                  </div>
-                  <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                    <div class="panel-body">
-                      <p>Dramatically redefine effective users for synergistic e-business.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading" role="tab" id="headingTwo">
-                    <p class="panel-title question-heading">
-                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                        <span class="btn btn-default cause-btn cause-btn-minus"><i class="fa fa-minus"></i></span>
-                        <span class="btn btn-default cause-btn cause-btn-plus"><i class="fa fa-plus"></i></span>
-                        Are updates free of charge?
-                      </a>
-                    </p>
-                  </div>
-                  <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                    <div class="panel-body">
-                      <p>Dramatically redefine effective users for synergistic e-business.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading" role="tab" id="headingThree">
-                    <p class="panel-title question-heading">
-                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                        <span class="btn btn-default cause-btn cause-btn-minus"><i class="fa fa-minus"></i></span>
-                        <span class="btn btn-default cause-btn cause-btn-plus"><i class="fa fa-plus"></i></span>
-                        Can i use Semona on all projects?
-                      </a>
-                    </p>
-                  </div>
-                  <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                    <div class="panel-body">
-                      <p>Dramatically redefine effective users for synergistic e-business.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>         
-          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">          
-            <div class="footer-section">
-              <h6 class="footer-heading">Our Gallery</h6>
-            </div>
-            <div class="footer-content portfolio-popup">
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 portfolio-item">
-                <div class="portfolio-img">
-                  <img src="{{asset('frontend/images/gallery/gallery-03.jpg')}}" class="img-responsive" alt="gallery-thumb-01">
-                  <div class="portfolio-overlay"><a href="images/gallery/gallery-01.jpg"><i class="fa fa-plus"></i></a></div>
-                </div>           
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 portfolio-item">
-                <div class="portfolio-img">
-                  <img src="{{asset('frontend/images/gallery/gallery-03.jpg')}}" class="img-responsive" alt="gallery-thumb-02">
-                  <div class="portfolio-overlay"><a href="images/ministry/ministry-leader.jpg"><i class="fa fa-plus"></i></a></div>
-                </div>           
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 portfolio-item">
-                <div class="portfolio-img">
-                  <img src="{{asset('frontend/images/footer/gallery/gallery-03.jpg')}}" class="img-responsive" alt="gallery-thumb-03">
-                  <div class="portfolio-overlay"><a href="images/donation/donation-04.jpg"><i class="fa fa-plus"></i></a></div>
-                </div>           
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 portfolio-item">
-                <div class="portfolio-img">
-                  <img src="{{asset('frontend/images/footer/gallery/gallery-03.jpg')}}" class="img-responsive" alt="gallery-thumb-04">
-                  <div class="portfolio-overlay"><a href="images/gallery/gallery-06.jpg"><i class="fa fa-plus"></i></a></div>
-                </div>           
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 portfolio-item">
-                <div class="portfolio-img">
-                  <img src="{{asset('frontend/images/footer/gallery/gallery-03.jpg')}}" class="img-responsive" alt="gallery-thumb-05">
-                  <div class="portfolio-overlay"><a href="images/gallery/gallery-09.jpg"><i class="fa fa-plus"></i></a></div>
-                </div>           
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 portfolio-item">
-                <div class="portfolio-img">
-                  <img src="{{asset('frontend/images/gallery/gallery-03.jpg')}}" class="img-responsive" alt="gallery-thumb-06">
-                  <div class="portfolio-overlay"><a href="images/gallery/gallery-10.jpg"><i class="fa fa-plus"></i></a></div>
-                </div>           
-              </div>                
-            </div>
-          </div>
-        </div>  
-        <div class="row">     
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-dtl text-center">
-            {{-- <p>Copyright &copy; 2017 <a href="index.html">Church</a> HTML Template by WP-Organic</p> --}}
-          </div> 
         </div>
-      </div> 
     </div>
-  </footer>
-<!-- end footer -->
-<!-- jquery -->
-<!-- jquery library js -->
-<script type="text/javascript" src="{{asset('frontend/js/jquery.min.js')}}"></script> 
-<!-- bootstrap js -->
-<script type="text/javascript" src="{{asset('frontend/js/bootstrap.min.js')}}"></script> 
- <!-- owl carousel js -->
-<script type="text/javascript" src="{{asset('frontend/js/owl.carousel.js')}}"></script>
-<!-- mail chimp js -->
-<script type="text/javascript" src="{{asset('frontend/js/jquery.ajaxchimp.js')}}"></script> 
-<!-- smooth scroll js -->
-<script type="text/javascript" src="{{asset('frontend/js/smooth-scroll.js')}}"></script>
-<!-- magnify popup js-->
-<script type="text/javascript" src="{{asset('frontend/js/jquery.magnific-popup.min.js')}}"></script> 
-<!-- menu js--> 
-<script type="text/javascript" src="{{asset('frontend/js/menumaker.js')}}"></script> 
-<!-- price slider js -->
-<script type="text/javascript" src="{{asset('frontend/js/price-slider.js')}}"></script> 
- <!-- event countdown js --> 
-<script type="text/javascript" src="{{asset('frontend/js/jquery.countdown.js')}}"></script> 
-<!-- custom js -->  
-<script type="text/javascript" src="{{asset('frontend/js/theme.js')}}"></script> 
-<!-- end jquery -->
+    <!-- ================> Social section end here <================== -->
+    <!-- ================> Footer section start here <================== -->
+    <footer class="footer">
+        <div class="footer__top padding--top padding--bottom">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="footer__about">
+                            <div class="section__header">
+                                <h2>About Peace</h2>
+                            </div>
+                            <div class="section__wrapper">
+                                <div class="footer__about-thumb">
+                                    <img src="{{asset('frontend/images/footer/about/01.jpg')}}" alt="footer thumb" class="w-100">
+                                </div>
+                                <div class="footer__about-contet">
+                                    <p>Dramatically strategize economically sound action items for e-business niches. Quickly re-engineer 24/365 potentialities before.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="footer__tags">
+                            <div class="section__header">
+                                <h2>Post Tag</h2>
+                            </div>
+                            <div class="section__wrapper">
+                                <ul>
+                                    <li><a href="#">Christian</a></li>
+                                    <li><a href="#">Hindu</a></li>
+                                    <li><a href="#">Magazine</a></li>
+                                    <li><a href="#">Muslims</a></li>
+                                    <li><a href="#">News</a></li>
+                                    <li><a href="#">SEO</a></li>
+                                    <li><a href="#">Themes</a></li>
+                                    <li><a href="#">WordPress</a></li>
+                                    <li><a href="#">Web Development</a></li>
+                                    <li><a href="#">Design</a></li>
+                                    <li><a href="#">Photography</a></li>
+                                    <li><a href="#">Media</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="footer__post">
+                            <div class="section__header">
+                                <h2>Recent Post</h2>
+                            </div>
+                            <div class="section__wrapper">
+                                <div class="footer__post-item">
+                                    <div class="footer__post-inner">
+                                        <div class="footer__post-thumb">
+                                            <a href="blog-single.html"><img src="{{asset('frontend/images/footer/post/01.jpg')}}" alt="footer post"></a>
+                                        </div>
+                                        <div class="footer__post-content">
+                                            <a href="blog-single.html"><h6>Collaboratively Coordinate.</h6></a>
+                                            <p><i class="far fa-calendar-alt"></i> 10 January, 2022</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer__post-item">
+                                    <div class="footer__post-inner">
+                                        <div class="footer__post-thumb">
+                                            <a href="blog-single.html"><img src="{{asset('frontend/images/footer/post/02.jpg')}}" alt="footer post"></a>
+                                        </div>
+                                        <div class="footer__post-content">
+                                            <a href="blog-single.html"><h6>Quickly Develop Exceptional</h6></a>
+                                            <p><i class="far fa-calendar-alt"></i> 10 January, 2022</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer__post-item">
+                                    <div class="footer__post-inner">
+                                        <div class="footer__post-thumb">
+                                            <a href="blog-single.html"><img src="{{asset('frontend/images/footer/post/03.jpg')}}" alt="footer post"></a>
+                                        </div>
+                                        <div class="footer__post-content">
+                                            <a href="blog-single.html"><h6>Why you need Peace WordPress Theme?</h6></a>
+                                            <p><i class="far fa-calendar-alt"></i> 10 January, 2022</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="footer__links">
+                            <div class="section__header">
+                                <h2>Useful Links</h2>
+                            </div>
+                            <div class="section__wrapper">
+                                <ul>
+                                    <li><a href="#">Log in</a></li>
+                                    <li><a href="#">Entries <abbr title="RSS">RSS</abbr></a></li>
+                                    <li><a href="#">Comments <abbr title="RSS">RSS</abbr></a></li>
+                                    <li><a href="#">WordPress.org</a></li>
+                                    <li><a href="#">Google</a></li>
+                                    <li><a href="#">Template</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <div class="footer__bottom-area text-center">
+                    <div class="footer__bottom-logo">
+                        <a href="index.html"><img src="{{asset('frontend/images/logo/01.png')}}" alt="footer logo"></a>
+                    </div>
+                    <div class="footer__bottom-content">
+                        <p>Copyright &copy; 2022 <a href="index.html">Peace</a> | Designed by <a href="https://themeforest.net/user/codexcoder/portfolio">CodexCoder</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ================> Footer section end here <================== -->
+
+    
+
+    
+
+    <!-- scrollToTop start here -->
+    <a href="#" class="scrollToTop"><i class="fas fa-arrow-up"></i><span class="pluse_1"></span><span class="pluse_2"></span></a>
+    <!-- scrollToTop ending here -->
+
+
+
+    
+
+    <!-- vendor plugins -->
+    <script src="{{asset('frontend/js/jquery-3.6.0.min.js')}}"></script>
+    <script src="{{asset('frontend/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('frontend/js/waypoints.min.js')}}"></script>
+    {{-- <script src="{{asset('frontend/js/all.min.js')}}"></script>  --}}
+    <script src="{{asset('frontend/js/swiper.min.js')}}"></script>
+    <script src="{{asset('frontend/js/lightcase.js')}}"></script>
+    <script src="{{asset('frontend/js/isotope.pkgd.min.js')}}"></script>
+    <script src="{{asset('frontend/js/donate-range.js')}}"></script>
+    <script src="{{asset('frontend/js/jquery.counterup.min.js')}}"></script>
+    <script src="{{asset('frontend/js/wow.js')}}"></script>
+    <script src="{{asset('frontend/js/custom.js')}}"></script>
 </body>
-<!--body end -->
 
 </html>

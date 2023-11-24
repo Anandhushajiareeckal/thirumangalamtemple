@@ -1,515 +1,469 @@
 @extends('layouts.frontend')
 @section('body')
-
-<!--  slider -->
-<header id="home-slider" class="slider-main-block">
-  <div class="item home-slider-img" style="background-image: url('{{asset('frontend/images/thirumangala/aarattu-2022.jpg')}}')">
-  </div>
-  <div class="item home-slider-img" style="background-image: url('{{asset('frontend/images/thirumangala/thirumangalam-sivarathri-2.jpg')}}')">
-  </div>
-  <div class="item home-slider-img" style="background-image: url('{{asset('frontend/images/thirumangala/thirumangalam-temple2022.jpg')}}')">
-  </div>
-  <div class="item home-slider-img" style="background-image: url('{{asset('frontend/images/thirumangala/thirumangalam-temple-renovation.jpg')}}')">
-  </div>
-  <div class="item home-slider-img" style="background-image: url('{{asset('frontend/images/thirumangala/unni-oottu-2022.jpg')}}')">
-  </div>
-</header>
-<!--  end slider -->
-<marquee style="height:35px; font-size:30px; background: black;color:#ffcc33;"  >Cyenosure    Cyenosure    Cyenosure   Cyenosure     Cyenosure Cyenosure     Cyenosure Cyenosure     Cyenosure   Cyenosure  Cyenosure  Cyenosure   Cyenosure    Cyenosure    Cyenosure    Cyenosure </marquee>
-<!--  about  -->
-{{-- <section id="event-counter" class="event-counter-main-block">
-    <div class="container-fluid">
-      <div class="row row-full-spacing">
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-          <div class="event-counter-blockOne">
-            <div class="bg-img" style="background-image: url('{{asset('frontend/images/event/event-bg.jpg')}}')">
-              <div class="overlay-bg"></div>
-              <div class="event-counter-block">
-                <div class="row">
-                  <div class="col-sm-offset-3 col-sm-1 col-xs-offset-2 col-xs-1">
-                    <div class="event-counter-icon"><i class="fa fa-calendar"></i></div>
-                  </div>
-                  <div class="col-sm-8 col-xs-9">
-                    <div class="event-counter-content">
-                      <h4 class="event-counter-heading">Latest Events<i class="fa fa-long-arrow-right"></i></h4>
-                      <h5 class="event-counter-subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum.</h5>
+  <!-- ================> Banner section start here <================== -->
+  <div class="banner__slider banner-style3 overflow-hidden">
+    <div class="swiper-wrapper">
+      @foreach ($banner as $item)
+        <div class="swiper-slide">
+            <div class="banner" style="background-image: url({{$item->image}});">
+                <div class="container">
+                    <div class="banner__content ms-lg-auto">
+                        <h2 class="text-light">{{$item->heading}}</h2>
+                        <p class="text-light" >{{$item->description  }}</p>
+                        <a href="#" class="default-btn move-right"><span>GET HELP NOW</span></a>
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </div> 
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-          <div class="event-counter-blockTwo">
-            <div class="bg-img" style="background-image: url('{{asset('frontend/images/event/counter-bg.jpg')}}')">
-              <div class="overlay-bg"></div>
-              <div class="event-counter-block">
-                <div class="event-countdown">
-                  <div class="coming-countdown" data-countdown="2017/9/30"></div>
+        </div>
+        @endforeach
+
+        {{-- <div class="swiper-slide">
+            <div class="banner" style="background-image: url({{asset('frontend/images/banner/08.jpg')}});">
+                <div class="container">
+                    <div class="banner__content ms-lg-auto">
+                        <h2>Love To Human Is Biggest Peace</h2>
+                        <p>Enthusiastically underwhelm quality benefits rather than professional "outside the box" thinking. Distinctively network highly efficient leadership skills</p>
+                        <a href="#" class="default-btn move-right"><span>GET HELP NOW</span></a>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
+        </div> --}}
+       
     </div>
-  </section> --}}
-<!--  end event countdown -->
-<!--  event  -->
-  <section id="event" class="event-main-block">
-    <div class="container">     
-      <div class="section text-center">
-        <h3 class="event-heading">Welcome!</h3>
-        <h5 class="event-subheading">          108 പരശുരാമ ശിവാലയങ്ങളിൽ ഏറ്റവും പ്രധാനപ്പെട്ടതും "തെക്കൻകാശി എന്നറിയപ്പെടുന്നതുമായ തിരുമംഗലം ശ്രീ മഹാവിഷ്ണു ശിവക്ഷേത്രം കേരളത്തിലെ തൃശ്ശൂർ ജില്ലയിൽ ഏങ്ങണ്ടിയൂർ സ്ഥിതി ചെയ്യുന്നു. കടലാക്രമണത്തെ അതിജീവിക്കാനായി മഹാദേവൻ കടലിനെ തിരിച്ചു നിർത്തി എന്ന ഐതിഹ്യത്തിൽ മഹാദേവൻ നിലകൊള്ളുന്നു. മഹാദേവന്റെ ഒപ്പം പാർവ്വതിദേവിയും, ഗണപതിയും, സുബ്രഹ്മണ്യനും സത്കുടുംബത്തോടുകൂടി നിലകൊള്ളുന്നു. സ്വയംഭൂവായ മഹാദേവന്റെ ശക്തി തണുപ്പിക്കാനായി ലക്ഷ്മീ സമേതനായ മഹാവിഷ്ണുവിനെ ഇടതുവശത്തായി മറ്റൊരു ശ്രീകോവിലിൽ പ്രതിഷ്ഠിച്ചിരിക്കുന്നു. മഹാദേവന്റെ തിരുമധുരം സേവിച്ചാൽ ജീവിതം മധുരിക്കും എന്നാണ് പഴമക്കാർ പറയുന്നത്. ഇരട്ട ശ്രീകോവിൽ ആയതിനാൽ പൂർണ്ണ പ്രതിക്ഷിണമാണ് നടത്താറുള്ളത്. സർവ്വവിധ വ്യാധികളും ബാധകളും ഉള്ളവർ മഹാദേവനെ വന്നു വാങ്ങിയാൽ നിമിഷങ്ങൾക്കകം മാറുമെന്നാണ് വിശ്വാസം.
-        </h5>
+</div>
+<!-- ================> Banner section end here <================== -->
 
-        <h5 class="event-subheading">
-          Welcome!
-          Thirumangala Temple situated at Thirumangalam desam, Engandiyur, Thrissur District.The Temple facing to Gurvayur Ernakulam National Highway. In this temple, there are two idles, one is Siva and the other is Maha Vishnu. Both a have same important. But Siva is the main Idol. Because of this temple listed in the 108 Siva temples list. The temple facing to the eastern side and have very good Sreekovil.</h5>
-        </div>
-  </section>
-
-
-
-
-
-
-<!--  church priest -->
-<section id="priest" class="priest-main-block">
-  <div class="container">
-    <div class="section text-center">
-      <h3 class="section-heading">Upadevas</h3>
-      <h5 class="sub-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at euismod ex, Maeceans sit amet sollicitudin ex.</h5>
-    </div>
-    <div id="priest-slider" class="priest-slider">
-      <div class="item priest-block">  
-        <div class="priest-img">
-          <a href="pastor-details.html"><img src="{{asset('frontend/images/thirumangala/upadeva1.jpg')}}" class="img-responsive" alt="priest-img-1"></a>
-        </div>
-        <div class="priest-dtl">
-          <a href="pastor-details.html"><h4 class="priest-name">Lord
-            Ganapathy</h4></a>
-        </div>
-      </div>
-      <div class="item priest-block"> 
-        <div class="priest-img">
-          <a href="pastor-details.html"><img src="{{asset('frontend/images/thirumangala/upadeva2.jpeg')}}" class="img-responsive" alt="priest-img-2"></a>
-        </div>
-        <div class="priest-dtl">
-          <a href="pastor-details.html"><h4 class="priest-name">Lord
-            Subramanyan</h4></a>
-        </div>
-      </div>
-      <div class="item priest-block"> 
-        <div class="priest-img">
-          <a href="pastor-details.html"><img src="{{asset('frontend/images/thirumangala/upadeva3.jpeg')}}" class="img-responsive" alt="priest-img-3"></a>
-        </div>
-        <div class="priest-dtl">
-          <a href="pastor-details.html"><h4 class="priest-name"> Lord
-            Ayyappan</h4></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!--  end priest -->
-
-
-
-
-
-
-
-<!--  end event -->
-<!--  about -->
-  <section id="about" class="about-main-block abt-one block-spacing">    
-    <div class="parallax" style="background-image: url('{{asset('frontend/images/thirumangala/thirumangalam-sivarathri-2.jpg')}}')">
-      <div class="overlay-bg"></div>
-      <div class="container">
-        <div class="section text-center">
-          <h3 class="section-heading">About</h3>
-          <h5 class="sub-heading">108 പരശുരാമ ശിവാലയങ്ങളിൽ ഏറ്റവും പ്രധാനപ്പെട്ടതും "തെക്കൻകാശി എന്നറിയപ്പെടുന്നതുമായ തിരുമംഗലം ശ്രീ മഹാവിഷ്ണു ശിവക്ഷേത്രം കേരളത്തിലെ തൃശ്ശൂർ ജില്ലയിൽ ഏങ്ങണ്ടിയൂർ സ്ഥിതി ചെയ്യുന്നു.</h5>
-        </div>
-        <div class="abt-content">
-          <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-              <div class="abt-block">
-                <div class="row">
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                    <div class=""></div>
-                  </div>
-                  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                    <div class="abt-dtl">
-                      <h4 class="abt-heading">Offerings</h4>
-                      <p>Lorem ipsum sionsectetuadipiscing elit. Vestibulum at euismod ex. Maecenas sit amet</p>
-                      <a class="read-more" href="about.html">Read More<i class="fa fa-long-arrow-right"></i></a>
-                    </div>                  
-                  </div>
-                </div>
-              </div>
-              <div class="abt-block">
-                <div class="row">
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                    <div class=""></div>
-                  </div>
-                  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                    <div class="abt-dtl">
-                      <h4 class="abt-heading">Poojas</h4>
-                      <p>Lorem ipsum sionsectetuadipiscing elit. Vestibulum at euismod ex. Maecenas sit amet</p>
-                      <a class="read-more" href="about.html">Read More</a>
-                    </div>                 
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-4 hidden-sm hidden-xs row-full-spacing">
-              <div class="abt-center">
-                <img src="{{asset('frontend/images/abt/about-img.jpg')}}" class="img-responsive" alt="abt-img">
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-              <div class="abt-block">
-                <div class="row">
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                    <div class=""></div>
-                  </div>
-                  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                    <div class="abt-dtl">
-                      <h4 class="abt-heading">Administration</h4>
-                      <p>Lorem ipsum sionsectetuadipiscing elit. Vestibulum at euismod ex. Maecenas sit amet</p>
-                      <a class="read-more" href="about.html">Read More<i class="fa fa-long-arrow-right"></i></a>
-                    </div>               
-                  </div>
-                </div>
-              </div>
-              <div class="abt-block">
-                <div class="row">
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                    <div class=""></div>
-                  </div>
-                  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                    <div class="abt-dtl">
-                      <h4 class="abt-heading">Festivals</h4>
-                      <p>Lorem ipsum sionsectetuadipiscing elit. Vestibulum at euismod ex. Maecenas sit amet</p>
-                      <a class="read-more" href="about.html">Read More<i class="fa fa-long-arrow-right"></i></a>
-                    </div>           
-                  </div>
-                </div>
-              </div>
-            </div>            
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-<!--  end about -->
-<!--  who are we -->
-  <section id="who" class="who-main-block">
+<!-- ================> Service section start here <================== -->
+<div class="service padding--top padding--bottom">
     <div class="container">
-      <div class="section text-center">
-        <h3 class="section-heading">Who Are We</h3>
-        <h5 class="sub-heading"> In this temple, there are two idles, one is Siva and the other is Maha Vishnu. Both a have same important. But Siva is the main Idol.</h5>
-      </div>
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-          <div class="who-img block-effect">
-            <img src="{{asset('frontend/images/temple1.jpeg')}}" class="img-responsive" alt="we-are-1">
-          </div>
+        <div class="section__header text-center">
+            <h2>Our Services</h2>
+            <p>Enthusiastically underwhelm quality benefits rather than professional outside the box thinking. Distinctively network highly efficient leadership skills</p>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-          <div class="who-content">
-            <h5 class="sub-heading"> The temple by Kattumadom Mana. Many devotees reached to make relief from their mental deceases. Devotees beleved to blesss Thirumangalathan very well. Thanthram is frm Pazhangaparambu Mana and the main festivals are Ashatamirohini and Sivarathri in Thirumangalam Temple. Devottes believed that to offer thirumaduram to Devan and to get sweet life in their life.</h5>
-
-          </div>
+        <div class="section__wrapper">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-3 col-12">
+                    <div class="service__left">
+                        <div class="service__item">
+                            <div class="service__inner">
+                                <div class="service__icon">
+                                    <i class="{{$service[0]->icon}}"></i>
+                                </div>
+                                <div class="service__content">
+                                    <h5>{{$service[0]->heading}}</h5>
+                                    <p>{{$service[0]->description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service__item">
+                            <div class="service__inner">
+                                <div class="service__icon">
+                                    <i class="{{$service[1]->icon}}"></i>
+                                </div>
+                                <div class="service__content">
+                                    <h5>{{$service[1]->heading}}</h5>
+                                    <p>{{$service[1]->description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service__item">
+                            <div class="service__inner">
+                                <div class="service__icon">
+                                    <i class="{{$service[2]->icon}}"></i>
+                                </div>
+                                <div class="service__content">
+                                    <h5>{{$service[2]->heading}}</h5>
+                                    <p>{{$service[2]->description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="service__center">
+                        <div class="service__text">
+                            <p>WHAT</p>
+                            <h3>Services</h3>
+                            <h6>WE PROVID</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-12">
+                    <div class="service__right">
+                        <div class="service__item">
+                            <div class="service__inner">
+                                <div class="service__icon">
+                                    <i class="{{$service[3]->icon}}"></i>
+                                </div>
+                                <div class="service__content">
+                                    <h5>{{$service[3]->heading}}</h5>
+                                    <p>{{$service[3]->description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service__item">
+                            <div class="service__inner">
+                                <div class="service__icon">
+                                    <i class="{{$service[4]->icon}}"></i>
+                                </div>
+                                <div class="service__content">
+                                    <h5>{{$service[4]->heading}}</h5>
+                                    <p>{{$service[4]->description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service__item">
+                            <div class="service__inner">
+                                <div class="service__icon">
+                                    <i class="{{$service[5]->icon}}"></i>
+                                </div>
+                                <div class="service__content">
+                                    <h5>{{$service[5]->heading}}</h5>
+                                    <p>{{$service[5]->description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-     
     </div>
-  </section>
-<!--  who are we -->
+</div>
+<!-- ================> Service section end here <================== -->
 
-<!--  latest news -->
-  <section id="news" class="news-main-block">
+
+<!-- ================> gallery section start here <================== -->
+<div class="gallery padding--top padding--bottom bg-light">
+    <div class="container-fluid">
+        <div class="section__header text-center">
+            <h2>Gallery</h2>
+        </div>
+        <div class="section__wrapper">
+            <div class="gallery__filter">
+                <ul>    
+                    <li data-filter="*" class="active">All</li>
+                        @foreach ($image_category as $item)
+                            <li data-filter=".{{$item->id}}">{{$item->category}}</li>
+                        @endforeach
+                </ul>
+            </div>
+            <div class="row g-0 grid">
+                @foreach ($image as $item)
+                <div class="col-xl-2 col-lg-4 col-sm-6 col-12 {{$item->category_id}}">
+                    <div class="gallery__item">
+                        <div class="gallery__inner" style="width: 240px; height:200px">
+                            <div class="gallery__thumb">
+                                <img src="{{$item->image}}" alt="gallery-thumb" class="w-100" style=" height:200px;">
+                            </div>
+                            <div class="gallery__content text-center">
+                                <a href="{{$item->image}}" data-rel="lightcase" class="gallery__icon"><i class="fas fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+
+            </div>
+            <div class="text-center mt-5">
+                <a href="#" class="default-btn move-right"><span>View All</span></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ================> gallery section end here <================== -->
+
+
+<!-- ================> Event section start here <================== -->
+<div class="event padding--top padding--bottom">
     <div class="container">
-      <div class="section text-center">
-        <h3 class="section-heading">Latest News</h3>
-        <h5 class="sub-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at euismod ex, Maeceans sit amet sollicitudin ex.</h5>
-      </div>
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-          <div class="news-block">
-            <div class="news-img block-effect">
-              <a href="blog-details.html"><img src="{{asset('frontend/images/template2.jpeg')}}" class="img-responsive" alt="news-img-1"></a>
-            </div>
-            <div class="news-content">
-              <div class="news-desc">
-                <p class="news-date"><i class="fa fa-calendar"></i>Posted 25 Dec 2016</p>
-                <p class="news-by"><i class="fa fa-user"></i>Post By : <a href="#">Admin</a></p>
-              </div>
-              <a href="blog-details.html"><h4 class="news-heading">Lorem ipsum dolor sit amet.</h4></a>
-              <p class="news-dtl">Aliquam laoreet orci quis risus vulputate tempor. Quisque aliquet, ipsum at mattis mattis, tortor nibh cursus lorem, ac iaculis metus sem vitae purus. Vivamus suscipit velit nec maximus interdum.</p>
-              <a class="read-more" href="blog-details.html">Read More<i class="fa fa-long-arrow-right"></i></a>
-            </div>
-          </div>
+        <div class="section__header text-center">
+            <h2>Recent Event</h2>
+            <p>Enthusiastically underwhelm quality benefits rather than professional outside the box thinking. Distinctively network highly efficient leadership skills</p>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-          <div class="news-block">
-            <div class="news-img block-effect">
-              <a href="blog-details.html"><img src="{{asset('frontend/images/template2.jpeg')}}" class="img-responsive" alt="news-img-2"></a>
+        <div class="section__wrapper">
+            <div class="row g-4 justify-content-center">
+                @foreach ($event as $item)
+                
+                <div class="col-lg-4 col-sm-6 col-12">
+                    <div class="event__item">
+                        <div class="event__inner">
+                            <div class="event__thumb">
+                                <a href="/details/{{$item->id}}"><img src="{{$item->image}}" alt="event thumb" style="height:200px"></a>
+                               
+                            </div>
+                            <div class="event__content">
+                                <a href="/details/{{$item->id}}"><h5>{{$item->heading}}</h5></a>
+                                <div class="event__metapost">
+                                    <ul class="event__metapost-info">
+                                        <li><i class="far fa-clock"></i> {{$item->time}}</li>
+                                        <li><i class="fas fa-map-marker-alt"></i>{{$item->location}}</li>
+                                    </ul>
+                                </div>
+                                <p>{{ substr($item->description, 0, 180) }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+                @endforeach
             </div>
-            <div class="news-content">
-              <div class="news-desc">
-                <p class="news-date"><i class="fa fa-calendar"></i>Posted 25 Dec 2016</p>
-                <p class="news-by"><i class="fa fa-user"></i>Post By : <a href="#">Admin</a></p>
-              </div>
-              <a href="blog-details.html"><h4 class="news-heading">Lorem ipsum dolor sit amet.</h4></a>
-              <p class="news-dtl">Aliquam laoreet orci quis risus vulputate tempor. Quisque aliquet, ipsum at mattis mattis, tortor nibh cursus lorem, ac iaculis metus sem vitae purus. Vivamus suscipit velit nec maximus interdum.</p>
-              <a class="read-more" href="blog-details.html">Read More<i class="fa fa-long-arrow-right"></i></a>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </section>
-<!--  end latest news -->
+</div>
+<!-- ================> Event section end here <================== -->
 
-<!--  latest sermons -->
-  <section id="sermons" class="sermons-vertical-main-block sermons-vOne block-spacing">
-    <div class="container-fluid">
-      <div class="section text-center">
-        <h3 class="section-heading">Latest Events</h3>
-        <h5 class="sub-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at euismod ex, Maeceans sit amet sollicitudin ex.</h5>
-      </div> 
-    </div>
-    <div id="sermons-slider" class="sermons-slider">
-      <div class="item sermons-block">  
-        <div class="row">
-          <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
-            <div class="sermons-vertical-block sermons-img-contentOne">
-              <div class="sermons-img">
-                <img src="{{asset('frontend/images/thirumangala/thirumangalam-sivarathri-2.jpg')}}" class="img-responsive" alt="sermons-img-1">
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
-            <div class="sermons-contentOne">
-              <a href="sermons-details.html"><h4 class="sermons-heading">Starting ulsavam.</h4></a>
-              <div class="sermons-desc">
-                <p class="sermons-speaker">President </p>
-                <p class="sermons-date">Date : 02 - 01 - 2017</p>
-              </div>
-              <p class="sermons-dtl">Our ulsavam is start 10-10-2023. This year, in our temple have some special poojas...</p>
-              <a class="read-more" href="sermons-details.html">Read More<i class="fa fa-long-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="item sermons-block">  
-        <div class="row">
-          <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
-            <div class="sermons-vertical-block sermons-img-contentOne">
-              <div class="sermons-img">
-                <img src="{{asset('frontend/images/thirumangala/thirumangalam-sivarathri-2.jpg')}}" class="img-responsive" alt="sermons-img-1">
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
-            <div class="sermons-contentOne">
-              <a href="sermons-details.html"><h4 class="sermons-heading">Starting ulsavam.</h4></a>
-              <div class="sermons-desc">
-                <p class="sermons-speaker">President </p>
-                <p class="sermons-date">Date : 02 - 01 - 2017</p>
-              </div>
-              <p class="sermons-dtl">Our ulsavam is start 10-10-2023. This year, in our temple have some special poojas...</p>
-              <a class="read-more" href="sermons-details.html">Read More<i class="fa fa-long-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="item sermons-block">  
-        <div class="row">
-          <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
-            <div class="sermons-vertical-block sermons-img-contentOne">
-              <div class="sermons-img">
-                <img src="{{asset('frontend/images/thirumangala/thirumangalam-sivarathri-2.jpg')}}" class="img-responsive" alt="sermons-img-1">
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
-            <div class="sermons-contentOne">
-              <a href="sermons-details.html"><h4 class="sermons-heading">Starting ulsavam.</h4></a>
-              <div class="sermons-desc">
-                <p class="sermons-speaker">President </p>
-                <p class="sermons-date">Date : 02 - 01 - 2017</p>
-              </div>
-              <p class="sermons-dtl">Our ulsavam is start 10-10-2023. This year, in our temple have some special poojas...</p>
-              <a class="read-more" href="sermons-details.html">Read More<i class="fa fa-long-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="item sermons-block">  
-        <div class="row">
-          <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
-            <div class="sermons-vertical-block sermons-img-contentOne">
-              <div class="sermons-img">
-                <img src="{{asset('frontend/images/thirumangala/thirumangalam-sivarathri-2.jpg')}}" class="img-responsive" alt="sermons-img-1">
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
-            <div class="sermons-contentOne">
-              <a href="sermons-details.html"><h4 class="sermons-heading">Starting ulsavam</h4></a>
-              <div class="sermons-desc">
-                <p class="sermons-speaker">President </p>
-                <p class="sermons-date">Date : 02 - 01 - 2017</p>
-              </div>
-              <p class="sermons-dtl">Our ulsavam is start 10-10-2023. This year, in our temple have some special poojas...</p>
-              <a class="read-more" href="sermons-details.html">Read More<i class="fa fa-long-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      
-            
-    </div>
-  </section>
-<!--  end latest sermons -->
 
-<!--  portfolio -->
-  <section id="portfolio" class="portfolio-main-index-block">
-    <div class="container-fluid">
-      <div class="section  text-center">
-        <h3 class="section-heading">Our church Gallery</h3>
-        <h5 class="sub-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at  euismod ex, Maeceans sit amet sollicitudin ex.</h5>
-      </div>
-      <div class="row row-spacing">
-        <div id="portfolio-block" class="portfolio-popup">
-          <div class="col-lg-15 col-md-15 col-sm-3 col-xs-6 portfolio-item portfolio-btm-mrgn">
-            <div class="portfolio-img">      
-              <img src="{{asset('frontend/images/gallery/gallery-10.jpg')}}" class="img-responsive" alt="gallery-img-1">
-              <div class="portfolio-overlay"><a href="{{asset('frontend/images/gallery/gallery-10.jpg')}}"><i class="fa fa-search"></i></a></div>  
+<!-- ================> Shedule section start here <================== -->
+<div class="shedule padding--top padding--bottom bg-img" style="background: url({{asset('frontend/images/bg-img/07.jpg')}}) rgba(0,0,0,.4);">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-xl-4 col-12">
+                <div class="section__header mb-xl-0 text-white">
+                    <h2 class="text-white">Festival Schedule</h2>
+                    <p>Dramatically strategize economically sound action items for e-business niches. Quickly re-engineer 24/365 potentialities before.</p>
+                    <p class="mb-0">Holisticly extend sticky partnerships and cross functional markets. Monotonectally.</p>
+                </div>
             </div>
-          </div>
-          <div class="col-lg-15 col-md-15 col-sm-3 col-xs-6 portfolio-item portfolio-btm-mrgn">
-            <div class="portfolio-img">      
-              <img src="{{asset('frontend/images/gallery/gallery-02.jpg')}}" class="img-responsive" alt="gallery-img-2">
-              <div class="portfolio-overlay"><a href="{{asset('frontend/images/gallery/gallery-02.jpg')}}"><i class="fa fa-search"></i></a></div>  
-            </div>
-          </div>
-          <div class="col-lg-15 col-md-15 col-sm-3 col-xs-6 portfolio-item portfolio-btm-mrgn">
-            <div class="portfolio-img">      
-              <img src="{{asset('frontend/images/gallery/gallery-03.jpg')}}" class="img-responsive" alt="gallery-img-3">
-              <div class="portfolio-overlay"><a href="images/gallery/gallery-03.jpg"><i class="fa fa-search"></i></a></div>
-            </div>
-          </div>
-          <div class="col-lg-15 col-md-15 col-sm-3 col-xs-6 portfolio-item portfolio-btm-mrgn">
-            <div class="portfolio-img">      
-              <img src="{{asset('frontend/images/gallery/gallery-04.jpg')}}" class="img-responsive" alt="gallery-img-4">
-              <div class="portfolio-overlay"><a href="images/gallery/gallery-04.jpg"><i class="fa fa-search"></i></a></div>  
-            </div>
-          </div>
-          <div class="col-lg-15 col-md-15 hidden-sm col-xs-6 portfolio-item portfolio-btm-mrgn">
-            <div class="portfolio-img">      
-              <img src="{{asset('frontend/images/gallery/gallery-05.jpg')}}" class="img-responsive" alt="gallery-img-5">
-              <div class="portfolio-overlay"><a href="images/gallery/gallery-05.jpg"><i class="fa fa-search"></i></a></div>  
-            </div>
-          </div>
-          <div class="col-lg-15 col-md-15 hidden-sm col-xs-6 portfolio-item portfolio-btm-mrgn">
-            <div class="portfolio-img">      
-              <img src="{{asset('frontend/images/gallery/gallery-05.jpg')}}" class="img-responsive" alt="gallery-img-6">
-              <div class="portfolio-overlay"><a href="images/gallery/gallery-05.jpg"><i class="fa fa-search"></i></a></div>  
-            </div>
-          </div>
-          <div class="col-lg-15 col-md-15 col-sm-3 col-xs-6 portfolio-item portfolio-btm-mrgn">
-            <div class="portfolio-img">      
-              <img src="{{asset('frontend/images/gallery/gallery-04.jpg')}}" class="img-responsive" alt="gallery-img-7">
-              <div class="portfolio-overlay"><a href="images/gallery/gallery-04.jpg"><i class="fa fa-search"></i></a></div>  
-            </div>
-          </div>
-          <div class="col-lg-15 col-md-15 col-sm-3 col-xs-6 portfolio-item portfolio-btm-mrgn">
-            <div class="portfolio-img">      
-              <img src="{{asset('frontend/images/gallery/gallery-08.jpg')}}" class="img-responsive" alt="gallery-img-8">
-              <div class="portfolio-overlay"><a href="images/gallery/gallery-08.jpg"><i class="fa fa-search"></i></a></div>  
-            </div>
-          </div>
-          <div class="col-lg-15 col-md-15 col-sm-3 col-xs-6 portfolio-item portfolio-btm-mrgn">
-            <div class="portfolio-img">      
-              <img src="{{asset('frontend/images/gallery/gallery-09.jpg')}}" class="img-responsive" alt="gallery-img-9">
-              <div class="portfolio-overlay"><a href="images/gallery/gallery-09.jpg"><i class="fa fa-search"></i></a></div>  
-            </div>
-          </div>
-          <div class="col-lg-15 col-md-15 col-sm-3 col-xs-6 portfolio-item portfolio-btm-mrgn">
-            <div class="portfolio-img">      
-              <img src="{{asset('frontend/images/gallery/gallery-10.jpg')}}" class="img-responsive" alt="gallery-img-10">
-              <div class="portfolio-overlay"><a href="images/gallery/gallery-10.jpg"><i class="fa fa-search"></i></a></div>  
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-<!--  end portfolio two -->
+            <div class="col-xl-8 col-12">
+                <div class="section__wrapper">
+                    <div class="shedule__top">
 
-<!-- subscribe -->
-  <section id="subscribe" class="subscribe-main-block">
-    <div class="bg-img parallax" style="background-image: url('{{asset('frontend/images/bg-img.jpg')}}')">
-      <div class="overlay-bg"></div>
-      <div class="container">
-        <div class="subscribe-dtl">
-          <h5 class="subscribe-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at euismod ex. Maecenas sit amet sollicitudin ex.</h5>
-          <div class="email-btn">
-            <form id="subscribe-form" class="subscribe-form">
-              <div class="input-group">
-                <label class="sr-only">Your Email address</label>
-                <input class="form-control" id="mc-email" placeholder="Your email address.." type="email">
-                <button type="submit" class="btn btn-default subscribe-btn">Subscribe</button>
-              </div>              
-              <label for="mc-email"></label>
-            </form>
-          </div>
+
+
+                        @foreach ($event as $item)
+                            <div class="shedule__item">
+                                <div class="shedule__inner">
+                                    <div class="shedule__content">
+                                        <div class="shedule__left">
+                                            <div class="shedule__title">
+                                                <h6>{{$item->heading}}</h6>
+                                                <p>{{$item->time}}</p>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+
+
+                         
+                       
+                        
+                       
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </section>
-<!--  end subscribe -->
-<!-- supporter -->
-  <section id="supporter" class="supporter-main-block">
+</div>
+<!-- ================> Shedule section end here <================== -->
+
+
+<!-- ================> Sermon section start here <================== -->
+<div class="sermon padding--top padding--bottom bg-light">
+    <div class="container">
+        <div class="section__header text-center">
+            <h2>Upadevas</h2>
+            <p>Proin Eget Tortor Risus. Cras ultricies ligula sed magna dictum porta. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
+        </div>
+        <div class="section__wrapper">
+            <div class="row g-4">
+                @foreach ($upadeva as $item)
+                
+                <div class="col-lg-6 col-12">
+                    <div class="sermon__item">
+                        <div class="sermon__inner">
+                            <div class=" " style="width:150px; ">
+                                <img src="{{$item->image}}" alt="sermon thumb" style="height:140px;">
+                            </div>
+                            <div class="sermon__content">
+                                <a href="upadevas/{{$item->id}}"><h6>{{$item->heading}}</h6></a>
+                                <ul class="sermon__content-metapost">
+                                    <li></i> {{ substr($item->description, 0,80) }}...</li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                @endforeach
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ================> Sermon section end here <================== -->
+
+
+
+  <!-- ================> Cause section start here <================== -->
+  {{-- <div class="cause padding--top padding--bottom bg-img" style="background: url(assets/images/bg-img/08.jpg) rgba(0,0,0,.4); display:none">
+    <div class="container">
+        <div class="section__header text-center">
+            <h2 class="text-white">Urgent Causes</h2>
+        </div>
+        <div class="section__wrapper">
+            <div class="cause__top row justify-content-center g-4 row-cols-xl-5 row-cols-md-3 row-cols-sm-2 row-cols-1">
+                <div class="cause__item">
+                    <div class="cause__inner">
+                        <div class="cause__content">
+                            <h3>82.5%</h3>
+                            <h6>Founded</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="cause__item">
+                    <div class="cause__inner">
+                        <div class="cause__content">
+                            <h3>$ 1650</h3>
+                            <h6>Donate</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="cause__item">
+                    <div class="cause__inner">
+                        <div class="cause__content">
+                            <h3>$ 2000</h3>
+                            <h6>Goal</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="cause__item">
+                    <div class="cause__inner">
+                        <div class="cause__content">
+                            <h3>10</h3>
+                            <h6>Donator</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="cause__item">
+                    <div class="cause__inner">
+                        <div class="cause__content">
+                            <h3>60</h3>
+                            <h6>Day to go</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cause__bottom">
+                <div class="cause__bars">
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</div> --}}
+
+
+
+
+<!-- ================> Contact section start here <================== -->
+<div class="contact padding--top padding--bottom bg-light">
+    <div class="container">
+        <div class="section__header text-center">
+            <h2>Contact Us</h2>
+            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+        </div>
+        <div class="section__wrapper">
+            <div class="contact__form">
+                <form class="d-flex flex-wrap justify-content-between" action="/enquiry" id="contact-form" method="POST">
+                    @csrf
+                    <input type="text" placeholder="Your Name" id="name" name="name" required="required">
+                    <input type="text" placeholder="Your Email" id="email" name="email" required>
+                    <input class="w-100" type="text" placeholder="Subject" id="subject" name="subject" required>
+                    <textarea placeholder="Your Message" rows="8" name="message" id="message" required></textarea>
+                    <div class="text-center w-100">
+                        <button type="submit" class="default-btn move-right"><span>SEND NOW</span></button>
+                    </div>
+                </form>
+                <p class="form-message"></p> 
+            </div> 
+        </div>
+    </div>
+</div>
+<!-- ================> Contact section end here <================== -->
+
+
+<!-- ================> Location section start here <================== -->
+<div class="location">
     <div class="container-fluid">
-      <div class="section text-center">
-        <h3 class="section-heading">Thanks To Our Supporter</h3>
-        <h5 class="sub-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at  euismod ex, Maeceans sit amet sollicitudin ex.</h5>
-      </div>
-      <div id="supporter-slider" class="supporter-slider">
-        <div class="item supporter-block">  
-          <div class="supporter-item">
-            <img src="images/supporter-01.png" class="img-responsive" alt="support-img-1">
-          </div>
+        <div class="row g-0">
+            <div class="col-lg-6 col-12">
+                <div class="location__left">
+                    <div class="location__map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423283.4355669374!2d-118.69192993092697!3d34.02073049448939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1633958856057!5m2!1sen!2sbd" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="location__right padding--top padding--bottom">
+                    <div class="location__info">
+                        <div class="location__info-top">
+                            <div class="section__header">
+                                <h2>Contact Person</h2>
+                            </div>
+                            <div class="section__wrapper">
+                                <div class="location__info-thumb">
+                                    <img src="{{asset('frontend/images/location/01.jpg')}}" alt="location thumb">
+                                </div>
+                                <div class="location__info-content">
+                                    <h6>Deniyel Murchi</h6>
+                                    <span>Church Pastor</span>
+                                    <ul>
+                                        <li><b>Tel:</b>+002145698</li>
+                                        <li><b>Email:</b>info@yourmail.com</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="location__info-bottom">
+                            <div class="section__header">
+                                <h2>Contact Info</h2>
+                            </div>
+                            <div class="section__wrapper">
+                                <div class="location__info-list">
+                                    <ul>
+                                        <li>
+                                            <div class="location__info-left">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                            </div> 
+                                            <div class="location__info-right">
+                                                <p>Inner Circular Road, New Fabada Streed Barmuda, USA.</p>
+                                            </div> 
+                                        </li>
+                                        <li>
+                                            <div class="location__info-left">
+                                                <i class="far fa-clock"></i>
+                                            </div> 
+                                            <div class="location__info-right">
+                                                <ul>
+                                                    <li><b>Monday-Thursday :</b> 06:00 am - 09:00 pm</li>
+                                                    <li><b>Friday :</b> 10:30 am - 05:30 pm</li>
+                                                    <li><b>Saturday :</b> 10:30 am - 05:30 pm</li>
+                                                    <li><b>Sunday :</b> Closed</li>
+                                                </ul>
+                                            </div> 
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="item supporter-block">  
-          <div class="supporter-item">
-            <img src="{{asset('frontend/images/supporter-02.png')}}" class="img-responsive" alt="support-img-2">
-          </div>
-        </div>
-        <div class="item supporter-block">  
-          <div class="supporter-item">
-            <img src="{{asset('frontend/images/supporter-03.pngv')}}" class="img-responsive" alt="support-img-3">
-          </div>
-        </div>
-        <div class="item supporter-block">  
-          <div class="supporter-item">
-            <img src="{{asset('frontend/images/supporter-04.png')}}" class="img-responsive" alt="support-img-4">
-          </div>
-        </div>
-        <div class="item supporter-block">  
-          <div class="supporter-item">
-            <img src="{{asset('frontend/images/supporter-02.png')}}" class="img-responsive" alt="support-img-5">
-          </div>
-        </div>     
-      </div>  
     </div>
-  </section>
-<!--  end supporter -->
+</div>
+<!-- ================> Location section end here <================== -->
+
+
+
+
+
+
+
 @endsection
