@@ -6,7 +6,7 @@
     <div class="container">
         <div class="pageheader__area">
             <div class="pageheader__left">      
-                <h3>Temple</h3>
+                <h3>Festivals</h3>
             </div>
         </div>
     </div>
@@ -82,14 +82,14 @@
                                             <div class="section__wrapper">
 
 
-                                                @foreach ($upadeva as $item)
+                                                @foreach ($event as $item)
                                                     <div class="footer__post-item">
                                                         <div class="footer__post-inner">
                                                             <div class="footer__post-thumb">
-                                                                <a href="/upadevas/{{$item->id}}"><img style="height: 80px;" src="{{$item->image}}" alt="footer post"></a>
+                                                                <a href="/details/{{$item->id}}"><img style="height: 80px;" src="{{$item->image}}" alt="footer post"></a>
                                                             </div>
                                                             <div class="footer__post-content">
-                                                                <a href="/upadevas/{{$item->id}}"><h6>{{$item->heading}}</h6></a>
+                                                                <a href="/details/{{$item->id}}"><h6>{{$item->heading}}</h6></a>
                                                                 <p> {{ substr($item->description, 0,50) }}</p>
                                                             </div>
                                                         </div>

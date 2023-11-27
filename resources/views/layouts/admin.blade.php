@@ -266,7 +266,7 @@
 								</a>
 								<ul class="collapse list-unstyled" id="UsersMenu2">
 									<li><a href="/admin/home/banner/list" aria-label="My Profile">Content</a></li>
-									<li><a href="/admin/home/service" aria-label="My Profile">Enquiry</a></li>
+									<li><a href="/admin/contact/enquiry" aria-label="My Profile">Enquiry</a></li>
 
 																		
 								
@@ -285,7 +285,7 @@
 								</a>
 							</li> --}}
 							
-							{{-- <li>
+							<li>
 								<a href="#UsersMenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle" aria-label="Users">
 									
 									<span class="mx-2">Settings</span>
@@ -296,7 +296,24 @@
 									<li><a href="/admin/menu" aria-label="Invoices">Menu</a></li>									
 								
 								</ul>
-							</li> --}}
+							</li>
+							<li >
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
 						</ul>
 					
 					</div>

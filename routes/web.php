@@ -25,6 +25,7 @@ Route::get("/details/{id}","App\Http\Controllers\FrontendController@event_detail
 Route::get("/contact","App\Http\Controllers\FrontendController@contact");
 Route::post("/enquiry","App\Http\Controllers\ContactController@enquiry");
 Route::get("/festival","App\Http\Controllers\FrontendController@festival");
+Route::get("/administration","App\Http\Controllers\FrontendController@administration");
 
 
 
@@ -38,7 +39,9 @@ Route::get("/festival","App\Http\Controllers\FrontendController@festival");
 
 
 
-Route::prefix('admin')->group(function () {
+
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::get("/dashboard","App\Http\Controllers\IndexController@dashboard")->name('dashboard');
     Route::prefix('home')->group(function () {
 
 
@@ -109,6 +112,9 @@ Route::prefix('admin')->group(function () {
     });
     Route::prefix('contact')->group(function () {
         Route::get("/","App\Http\Controllers\ContactController@index")->name('contact');
+        Route::get("/enquiry","App\Http\Controllers\ContactController@enquiry_list")->name('enquiry_list');
+        Route::get("/enquiry_delete{id}","App\Http\Controllers\ContactController@enquiry_delete")->name('enquiry_delete');
+        Route::get("/enquiry_detail/{id}","App\Http\Controllers\ContactController@enquiry_detail")->name('enquiry_detail');
         Route::put("/update","App\Http\Controllers\ContactController@update")->name('contact_update');
     });
     Route::prefix('festival')->group(function () {
@@ -116,6 +122,30 @@ Route::prefix('admin')->group(function () {
         Route::put("/update","App\Http\Controllers\FestivalController@update")->name('festival_update');
 
     });
+    Route::prefix('administration')->group(function () {
+        Route::get("/","App\Http\Controllers\AdministeationController@index");
+        Route::post("/store","App\Http\Controllers\AdministeationController@store")->name('administration_store');
+        Route::put("/update/{id}","App\Http\Controllers\AdministeationController@update")->name('administration_update');
+        Route::get("/content","App\Http\Controllers\AdministeationController@content")->name('administration_content');
+        Route::put("/content/update","App\Http\Controllers\AdministeationController@content_update")->name('adminstration_content_edit');
+    });
+
+    Route::prefix('social')->group(function () {
+        Route::get("/","App\Http\Controllers\SocialController@index");
+        Route::get("/add","App\Http\Controllers\SocialController@add")->name('social_add');
+        Route::post("/store","App\Http\Controllers\SocialController@store")->name('social_store');
+        Route::get("{id}/edit","App\Http\Controllers\SocialController@edit")->name('social_edit');
+        Route::put("/update/{id}","App\Http\Controllers\SocialController@update")->name('social_update');
+    });
+
+    Route::prefix('logo')->group(function () {
+        Route::get("/","App\Http\Controllers\SettingsController@logo");
+        Route::put("/update","App\Http\Controllers\SettingsController@update")->name('logo_update');
+
+    });
 
 
-});
+})->middleware('auth');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

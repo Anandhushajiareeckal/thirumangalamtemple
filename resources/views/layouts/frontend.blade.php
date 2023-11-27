@@ -1,3 +1,14 @@
+@php
+namespace App\Models;
+use App\Models\social;
+use App\Models\logo;
+use App\Models\contact;
+use App\Models\event;
+$social = social::all();
+$logo = logo::find($id=1); 
+$contact = contact::find($id=1);
+$event = event::latest()->take(3)->get();
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,8 +17,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peace</title>
-    <link rel="shortcut icon" href="assets/css/favicon.png" type="image/x-icon">
+    <title>Thirumangalam temple</title>
+    <link rel="shortcut icon" href="{{$logo->fav}}" type="image/x-icon">
 
     <link rel="stylesheet" href="{{asset('frontend/css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/bootstrap.min.css')}}">
@@ -58,30 +69,31 @@
                                 <ul>
                                     <li>
                                         <i class="fas fa-phone-alt"></i>
-                                        +8812 345 678 912
+                                        {{$contact->number}}
                                     </li>
                                     <li>
                                         <i class="fas fa-envelope"></i>
-                                        info@yourmail.com
+                                        {{$contact->email}}
                                     </li>
                                 </ul>
                             </div>
                             <div class="header__top-center">
                                 <div class="header__top-logo d-none d-md-block" >
-                                    <a href="/"><img style="width:160px; height:160px;" src="{{asset('frontend/images/temple final Logo English.png')}}" alt="logo"></a>
+                                    <a href="/"><img style="width:170px; height:155px;" src="{{$logo->logo}}" alt="logo"></a>
                                 </div>
                             </div>
                             <div class="header__top-right">
                                 <div class="header__top-socialsearch">
                                     <div class="header__top-social">
                                         <ul>
-                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                                            @foreach ($social as $item)
+                                                @if ($item->status == 1)
+                                                    <li><a href="{{$item->link}}"><i class="{{$item->icon}}"></i></a></li>
+                                                @endif
+                                            @endforeach 
                                         </ul>
                                     </div>
-                              
+                                    <a href="https://kattumadam.com/">Kattumadam temple</a>
                                 </div>
                             </div>
                         </div>
@@ -94,8 +106,8 @@
             <div class="container " >
                 <div class="header__mainmenu navbar navbar-expand-xl navbar-light" >
                     <div class="header__logo" >
-                        <a href="index.html" style="width: 100px; height:100px;" class="d-none d-xl-block"><img src="{{asset('frontend/images/temple final Logo English.png')}}" alt="logo"></a>
-                        <a href="index.html" class="d-xl-none"><img src="{{asset('frontend/images/logo/01.png')}}" alt="logo"></a>
+                        <a href="index.html" style="width: 100px; height:100px;" class="d-none d-xl-block"><img src="{{$logo->logo}}" alt="logo"></a>
+                        <a href="index.html" class="d-xl-none"><img src="{{$logo->logo}}" alt="logo"></a>
                     </div>
                     <div class="header__bar">
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menubar" aria-controls="menubar" aria-expanded="false" aria-label="Toggle navigation">
@@ -127,12 +139,12 @@
                                     <a href="/events-news">news & events</a>
                                 </li >
                                 <li class="active">
-                                    <a href="#0">Contact </a>
+                                    <a href="/contact">Contact </a>
                                 </li >
                                 <li class="active">
-                                    <a href="#0">Administration</a>
+                                    <a href="/administration">Administration</a>
                                 </li>
-                                <li class="active"><a href="contact.html"> Festivals</a></li>
+                                <li class="active"><a href="/festival"> Festivals</a></li>
                             </ul>
                             <a href="cause-single.html" class="default-btn"><span>Donate Now <i class="fas fa-heart"></i></span></a>
                         </div>
@@ -165,30 +177,16 @@
         <div class="container">
             <div class="social__area">
                 <ul class="social__list">
-                    <li class="social__list-facebook">
-                        <a href="#">
-                            <i class="fab fa-facebook-f"></i>
-                            <span>facebook</span>
-                        </a>
-                    </li>
-                    <li class="social__list-twitter">
-                        <a href="#">
-                            <i class="fab fa-twitter"></i>
-                            <span>twitter</span>
-                        </a>
-                    </li>
-                    <li class="social__list-linkedin">
-                        <a href="#">
-                            <i class="fab fa-linkedin-in"></i>
-                            <span>linkedin</span>
-                        </a>
-                    </li>
-                    <li class="social__list-instagram">
-                        <a href="#">
-                            <i class="fab fa-instagram"></i>
-                            <span>instagram</span>
-                        </a>
-                    </li>
+                    @foreach ($social as $item)
+                        @if ($item->status == 1)
+                            <li class="social__list-linkedin">
+                                <a href="{{$item->link}}">
+                                    <i class="{{$item->icon}}"></i>
+                                    <span>linkedin</span>
+                                </a>
+                            </li>
+                        @endif
+                    @endforeach
                 </ul>
             </div>
         </div>
@@ -199,14 +197,14 @@
         <div class="footer__top padding--top padding--bottom">
             <div class="container">
                 <div class="row g-4">
-                    <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="col-xl-4 col-sm-6 col-12">
                         <div class="footer__about">
                             <div class="section__header">
-                                <h2>About Peace</h2>
+                                <h2>About Temple</h2>
                             </div>
                             <div class="section__wrapper">
                                 <div class="footer__about-thumb">
-                                    <img src="{{asset('frontend/images/footer/about/01.jpg')}}" alt="footer thumb" class="w-100">
+                                    <img src="{{asset('frontend/images/2020-11-23.jpg')}}" alt="footer thumb" class="w-100" style="height:200px;">
                                 </div>
                                 <div class="footer__about-contet">
                                     <p>Dramatically strategize economically sound action items for e-business niches. Quickly re-engineer 24/365 potentialities before.</p>
@@ -214,7 +212,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
+                    {{-- <div class="col-xl-3 col-sm-6 col-12">
                         <div class="footer__tags">
                             <div class="section__header">
                                 <h2>Post Tag</h2>
@@ -236,62 +234,48 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
+                    </div> --}}
+                    <div class="col-xl-4 col-sm-6 col-12">
                         <div class="footer__post">
                             <div class="section__header">
                                 <h2>Recent Post</h2>
                             </div>
                             <div class="section__wrapper">
+
+                                @foreach ($event as $item)
+                                
                                 <div class="footer__post-item">
                                     <div class="footer__post-inner">
                                         <div class="footer__post-thumb">
-                                            <a href="blog-single.html"><img src="{{asset('frontend/images/footer/post/01.jpg')}}" alt="footer post"></a>
+                                            <a href="/details/{{$item->id}}"><img src="{{$item->image}}" alt="footer post"></a>
                                         </div>
                                         <div class="footer__post-content">
-                                            <a href="blog-single.html"><h6>Collaboratively Coordinate.</h6></a>
-                                            <p><i class="far fa-calendar-alt"></i> 10 January, 2022</p>
+                                            <a href="/details/{{$item->id}}"><h6>{{$item->heading}}</h6></a>
+                                            <p><i class="far fa-calendar-alt"></i> {{ $item->updated_at->format('d F Y') }}</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="footer__post-item">
-                                    <div class="footer__post-inner">
-                                        <div class="footer__post-thumb">
-                                            <a href="blog-single.html"><img src="{{asset('frontend/images/footer/post/02.jpg')}}" alt="footer post"></a>
-                                        </div>
-                                        <div class="footer__post-content">
-                                            <a href="blog-single.html"><h6>Quickly Develop Exceptional</h6></a>
-                                            <p><i class="far fa-calendar-alt"></i> 10 January, 2022</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="footer__post-item">
-                                    <div class="footer__post-inner">
-                                        <div class="footer__post-thumb">
-                                            <a href="blog-single.html"><img src="{{asset('frontend/images/footer/post/03.jpg')}}" alt="footer post"></a>
-                                        </div>
-                                        <div class="footer__post-content">
-                                            <a href="blog-single.html"><h6>Why you need Peace WordPress Theme?</h6></a>
-                                            <p><i class="far fa-calendar-alt"></i> 10 January, 2022</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                    
+                                @endforeach
+                                
+                                
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="col-xl-4 col-sm-6 col-12">
                         <div class="footer__links">
                             <div class="section__header">
                                 <h2>Useful Links</h2>
                             </div>
                             <div class="section__wrapper">
                                 <ul>
-                                    <li><a href="#">Log in</a></li>
-                                    <li><a href="#">Entries <abbr title="RSS">RSS</abbr></a></li>
-                                    <li><a href="#">Comments <abbr title="RSS">RSS</abbr></a></li>
-                                    <li><a href="#">WordPress.org</a></li>
-                                    <li><a href="#">Google</a></li>
-                                    <li><a href="#">Template</a></li>
+                                    <li><a href="/temple">Temple</a></li>
+                                    <li><a href="/offerings">Offerings</a></li>
+                                    <li><a href="/poojas">Poojas</a></li>
+                                    <li><a href="/gallery">Gallery</a></li>
+                                    <li><a href="/contact">Contact</a></li>
+                                    <li><a href="/administration">Administration</a></li>
+                                    <li><a href="/festival">Festivals</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -302,11 +286,9 @@
         <div class="footer__bottom">
             <div class="container">
                 <div class="footer__bottom-area text-center">
-                    <div class="footer__bottom-logo">
-                        <a href="index.html"><img src="{{asset('frontend/images/logo/01.png')}}" alt="footer logo"></a>
-                    </div>
+                   
                     <div class="footer__bottom-content">
-                        <p>Copyright &copy; 2022 <a href="index.html">Peace</a> | Designed by <a href="https://themeforest.net/user/codexcoder/portfolio">CodexCoder</a></p>
+                        <p> Designed by <a href="https://cyenosure.com/">Cyenosure</a></p>
                     </div>
                 </div>
             </div>

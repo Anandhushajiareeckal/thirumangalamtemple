@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Storage;
 
 class IndexController extends Controller
 {
+    public function dashboard(){
+        return view('admin.dashboard');
+    }
     /**
      * Display a listing of the resource.
      */

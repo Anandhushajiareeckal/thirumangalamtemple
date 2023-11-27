@@ -45,4 +45,23 @@ class ContactController extends Controller
         $enquiry->save();
         return redirect('/contact');
     }
+
+    public function enquiry_list(){
+        $enquiry = enquiry::all();
+        return  view('admin.contact.enquery',['enquiry'=>$enquiry]);
+
+    }
+
+    public function enquiry_detail(string $id){
+        $enquiry = enquiry::find($id);
+        return  view('admin.contact.enquery_detail',['enquiry'=>$enquiry]);
+
+    }
+
+    public function enquiry_delete(string $id){
+        $enquiry = enquiry::find($id);
+        $enquiry->delete();
+        return redirect('/admin/contact/enquiry');
+    }
+
 }

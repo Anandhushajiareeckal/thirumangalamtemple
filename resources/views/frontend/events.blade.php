@@ -4,7 +4,7 @@
 <div class="event padding--top padding--bottom">
     <div class="container">
         <div class="section__header text-center">
-            <h2>Recent Event</h2>
+            <h2>Recent News & Event</h2>
             <p>Enthusiastically underwhelm quality benefits rather than professional outside the box thinking. Distinctively network highly efficient leadership skills</p>
         </div>
         <div class="section__wrapper">
